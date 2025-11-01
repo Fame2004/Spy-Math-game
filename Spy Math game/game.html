@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เล่นเกม - Spy's Math Quest</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <div class="game-info-bar">
+        <div class="mode-display">
+            โหมด: <span id="mode-text">กำลังโหลด...</span>
+        </div>
+        <div class="timer">
+            เวลา: <span id="timer-display">02:00</span>
+        </div>
+        <div class="score">
+            คะแนน: <span id="score-display">0</span>
+        </div>
+        <div class="game-controls">
+            <a href="select-mode.html" class="nav-button">เริ่มใหม่</a>
+            <a href="index.html" class="nav-button">ย้อนกลับ</a>
+        </div>
+    </div>
+
+    <main class="game-container">
+        <div class="problem-container">
+            
+            <div class="spy-card orange">
+                <h3>Spy John</h3>
+                <div class="number-box" id="problem-num1">?</div>
+                <img src="images/spy-orange.png" alt="Spy Orange" class="spy-avatar">
+            </div>
+
+            <div class="operator-display" id="problem-operator">+</div>
+
+            <div class="spy-card blue">
+                <h3>Natthawat</h3>
+                <div class="number-box" id="problem-num2">?</div>
+                <img src="images/spy-blue.png" alt="Spy Blue" class="spy-avatar">
+            </div>
+
+            <div class="equals-sign">=</div>
+            <div class="equals-sign">?</div> </div>
+
+        <div class="answer-grid">
+            <button class="answer-button" id="btn-0">1</button>
+            <button class="answer-button" id="btn-1">2</button>
+            <button class="answer-button" id="btn-2">3</button>
+            <button class="answer-button" id="btn-3">4</button>
+        </div>
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>

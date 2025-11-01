@@ -1,0 +1,261 @@
+/* --- การตั้งค่าทั่วไป --- */
+body {
+    font-family: Arial, sans-serif; /* หรือฟอนต์ที่คล้ายในเกม */
+    background-color: #FFFBF5;     /* สีครีมอ่อนๆ */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* ป้องกันการเลื่อนซ้าย-ขวา */
+}
+
+/* --- ส่วนที่ 1: แถบเมนูด้านบน (Header) --- */
+header {
+    display: flex;
+    justify-content: space-between; /* จัดซ้าย-ขวา */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-title {
+    background-color: #29B6F6; /* สีฟ้า */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.nav-button {
+    background-color: #795548; /* สีน้ำตาลเข้ม */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* --- ส่วนที่ 2: เนื้อหาหลัก (Main Content) --- */
+main {
+    position: relative; /* ตั้งค่านี้เพื่อให้ตัวละครลอยได้ */
+    padding-top: 50px;
+}
+
+.spy-character {
+    position: absolute;
+    top: -20px; /* ปรับตำแหน่งให้โผล่มาพอดีๆ */
+    right: 50px; /* ชิดขวา */
+    width: 200px; /* ปรับขนาดตามความเหมาะสม */
+    z-index: 1;   /* ให้ตัวละครอยู่บน */
+}
+
+.menu-content {
+    position: relative;
+    text-align: left; /* จัดข้อความชิดซ้าย */
+    padding-left: 10%; /* ดันข้อความเข้ามา */
+    padding-top: 30px;
+    z-index: 2; /* ให้ข้อความอยู่บนตัวละคร */
+}
+
+.menu-content h1 {
+    font-size: 4em; /* ขนาดใหญ่ */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.menu-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* --- ส่วนที่ 3: ปุ่มเริ่มเกม --- */
+#startButton {
+    background-color: #FFA726; /* สีส้ม */
+    color: black; /* สีตัวอักษรบนปุ่ม */
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
+}
+
+#startButton:hover {
+    background-color: #FB8C00; /* สีส้มเข้มขึ้น */
+}
+
+/* --- สไตล์สำหรับหน้าเลือกโหมด (Step 2) --- */
+
+.mode-selection-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.mode-selection-container h2 {
+    font-size: 2.5em; /* ขนาดตัวอักษรหัวข้อ */
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.mode-buttons {
+    display: flex;
+    justify-content: center; /* จัดปุ่มให้อยู่กลางจอ */
+    align-items: center;
+    gap: 50px; /* ระยะห่างระหว่าง 2 ปุ่ม */
+    flex-wrap: wrap; /* ถ้าจอมือถือ ให้ปุ่มตกลงมา */
+}
+
+.mode-button {
+    width: 250px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column; /* จัดไอคอนกับข้อความแนวตั้ง */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* ลบขีดเส้นใต้ของลิงก์ */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.mode-button:hover {
+    transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อเมาส์ชี้ */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.mode-button .icon {
+    font-size: 9em;  /* ขนาดไอคอน + หรือ - */
+    font-weight: bold;
+    line-height: 1; /* ปรับระยะบรรทัด */
+}
+
+.mode-button h3 {
+    font-size: 1.8em;
+    margin-top: 10px;
+}
+
+/* --- กำหนดสีปุ่ม (อ้างอิงจากรูปที่ 3) --- */
+.mode-button.add {
+    background-color: #29B6F6; /* สีฟ้า */
+}
+
+.mode-button.subtract {
+    background-color: #FFA726; /* สีส้ม/เหลือง */
+}
+
+/* --- สไตล์สำหรับหน้าเล่นเกม (Step 3) --- */
+
+/* แถบข้อมูลด้านบน */
+.game-info-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #29B6F6; /* สีฟ้า */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.game-info-bar .timer {
+    background-color: white;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 6px;
+}
+
+.game-info-bar .score {
+    background-color: #FFA726; /* สีส้ม */
+    color: black;
+    padding: 5px 15px;
+    border-radius: 6px;
+}
+
+.game-info-bar .game-controls .nav-button {
+    background-color: #FF7043; /* สีส้มแดง */
+}
+
+/* ส่วนของโจทย์ */
+.game-container {
+    padding: 20px;
+}
+
+.problem-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* ระยะห่างระหว่างการ์ด */
+    margin: 40px auto;
+}
+
+.spy-card {
+    width: 200px;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.spy-card.orange { background-color: #FFE0B2; /* สีส้มอ่อน */ }
+.spy-card.blue { background-color: #B3E5FC; /* สีฟ้าอ่อน */ }
+
+.spy-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+
+.spy-card .number-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.spy-card .spy-avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* กันรูปบี้ */
+}
+
+.operator-display, .equals-sign {
+    font-size: 4em;
+    font-weight: bold;
+    color: #555;
+}
+
+/* ส่วนปุ่มคำตอบ */
+.answer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 คอลัมน์ */
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.answer-button {
+    padding: 30px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.answer-button:hover {
+    transform: scale(1.03);
+}
+
+/* สีปุ่ม 4 สี (อ้างอิงจากรูป) */
+.answer-button:nth-child(1) { background-color: #29B6F6; } /* ฟ้า */
+.answer-button:nth-child(2) { background-color: #FFCA28; } /* เหลือง */
+.answer-button:nth-child(3) { background-color: #9CCC65; } /* เขียว */
+.answer-button:nth-child(4) { background-color: #FF7043; } /* ส้มแดง */
